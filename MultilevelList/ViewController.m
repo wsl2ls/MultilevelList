@@ -10,7 +10,7 @@
 #import "SLNodeModel.h"
 #import "SLNodeTableViewCell.h"
 
-static int const MaxLevel = 7; //最大的层级数
+static int const MaxLevel = 4; //最大的层级数
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, SLNodeTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,7 +31,7 @@ static int const MaxLevel = 7; //最大的层级数
 
 #pragma mark - DataSouce
 
-// 获取树根结点数组
+// 获取并初始化 树根结点数组
 - (void)setDataSOurce {
     for (int i = 0; i < 4; i++) {
         SLNodeModel * node = [[SLNodeModel alloc] init];
@@ -49,8 +49,8 @@ static int const MaxLevel = 7; //最大的层级数
 
 /**
  获取并展开父结点的子结点数组 数量随机产生
- @param level 父节点的层级
- @param indexPath 父节点所在的位置
+ @param level 父结点的层级
+ @param indexPath 父结点所在的位置
  */
 - (void)expandChildrenNodesLevel:(int)level atIndexPath:(NSIndexPath *)indexPath {
     NSMutableArray * insertNodeRows = [NSMutableArray array];
@@ -85,8 +85,8 @@ static int const MaxLevel = 7; //最大的层级数
 
 /**
  获取并隐藏父结点的子结点数组
- @param level 父节点的层级
- @param indexPath 父节点所在的位置
+ @param level 父结点的层级
+ @param indexPath 父结点所在的位置
  */
 - (void)hiddenChildrenNodesLevel:(int)level atIndexPath:(NSIndexPath *)indexPath {
     NSMutableArray * deleteNodeRows = [NSMutableArray array];
@@ -116,7 +116,7 @@ static int const MaxLevel = 7; //最大的层级数
 }
 
 /**
- 更新当前结点下所有子节点的选中状态
+ 更新当前结点下所有子结点的选中状态
  @param level 选中的结点层级
  @param selected 是否选中
  @param indexPath 选中的结点位置
