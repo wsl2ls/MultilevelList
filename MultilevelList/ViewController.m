@@ -10,7 +10,7 @@
 #import "SLNodeModel.h"
 #import "SLNodeTableViewCell.h"
 
-static int const MaxLevel = 7; //最大的层级
+static int const MaxLevel = 7; //最大的层级数
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, SLNodeTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

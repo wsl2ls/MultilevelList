@@ -56,11 +56,11 @@
     _nameLabel.frame = CGRectMake(_selectedBtn.frame.origin.x + selectedSize.width + 8, 0, _expandBtn.frame.origin.x - 8 - (_selectedBtn.frame.origin.x + selectedSize.width + 8), self.cellSize.height);
     _nameLabel.text = self.node.name;
     
-//    if (_node.leaf) {
-//        _expandBtn.hidden = YES;
-//    }else{
-//        _expandBtn.hidden = NO;
-//    }
+    if (_node.leaf) {
+        _expandBtn.hidden = YES;
+    }else{
+        _expandBtn.hidden = NO;
+    }
     
 }
 
