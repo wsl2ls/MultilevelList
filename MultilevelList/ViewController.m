@@ -53,6 +53,8 @@ static int const MaxLevel = 4; //最大的层级数
  @param indexPath 父结点所在的位置
  */
 - (void)expandChildrenNodesLevel:(int)level atIndexPath:(NSIndexPath *)indexPath {
+    
+    SLNodeModel * nodeModel = self.dataSource[indexPath.row];
     NSMutableArray * insertNodeRows = [NSMutableArray array];
     int insertLocation = (int)indexPath.row + 1;
     for (int i = 0; i < arc4random()%9; i++) {
@@ -64,7 +66,7 @@ static int const MaxLevel = 4; //最大的层级数
         node.leaf = (node.level < MaxLevel) ? NO : YES;
         node.root = NO;
         node.expand = NO;
-        node.selected = NO;
+        node.selected = nodeModel.selected;
         [self.dataSource insertObject:node atIndex:insertLocation + i];
         [insertNodeRows addObject:[NSIndexPath indexPathForRow:insertLocation + i inSection:0]];
     }
@@ -89,6 +91,7 @@ static int const MaxLevel = 4; //最大的层级数
  @param indexPath 父结点所在的位置
  */
 - (void)hiddenChildrenNodesLevel:(int)level atIndexPath:(NSIndexPath *)indexPath {
+    
     NSMutableArray * deleteNodeRows = [NSMutableArray array];
     int length = 0;
     int deleteLocation = (int)indexPath.row + 1;
