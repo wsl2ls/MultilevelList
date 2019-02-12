@@ -1,6 +1,7 @@
 # MultilevelList
 tableView多级列表
 
+简书地址：https://www.jianshu.com/p/075d6a0c72fa
 
 ![TableView多级列表的实现效果预览图](https://upload-images.jianshu.io/upload_images/1708447-b7a40a35835084d5.gif?imageMogr2/auto-orient/strip)
 
@@ -120,7 +121,7 @@ tableView多级列表
 
 ```
 
-> **选中：**  会更新当前结点下所有子结点的选中状态。（示例demo中的效果是只更新当前结点下所有展开的子结点的选中状态，因为子结点的数据是边展开边获取的，合并起来的数据没有保存。）
+> **选中：**  会更新当前结点下所有子结点的选中状态。
 >> 选中的位置以及范围可通过点击的结点的位置、层级、子结点ID(当前结点ID)与子结点的层级或父节点相比较来确定。可以的话，做一下缓存处理，**优化不分大小，从点滴做起**。
 
 ```
